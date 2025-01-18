@@ -43,7 +43,7 @@ This project demonstrates how to **analyze** and **score** resumes using **Googl
 
 1. **Clone** the repo:
    ```bash
-   git clone https://github.com/YourUsername/ResumeAnalyzer.git
+   git clone https://github.com/ShantamShukla/AI-Powered-Resume-Analyzer
    cd ResumeAnalyzer
    ```
 2. **Create** a virtual environment (optional but recommended):
@@ -63,7 +63,11 @@ This project demonstrates how to **analyze** and **score** resumes using **Googl
 5. **Google Drive API** (optional for folder approach):
    - Enable the Drive API in your GCP project.
    - Create a **service account** with read access.
-   - Place `service_account.json` in your project folder.
+   - Convert your `service_account.json` contents into a single-line JSON string and store it in the `.env` file under the `GOOGLE_SERVICE_ACCOUNT_INFO` variable.
+   - **Example Format**:
+     ```
+     GOOGLE_SERVICE_ACCOUNT_INFO={"type":"service_account","project_id":"your-project-id","private_key_id":"your-private-key-id","private_key":"-----BEGIN PRIVATE KEY-----\n...your key...\n-----END PRIVATE KEY-----\n","client_email":"your-service-account-email","client_id":"your-client-id","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_x509_cert_url":"your-cert-url"}
+     ```
 
 ---
 
@@ -91,7 +95,6 @@ ResumeAnalyzer/
 ├─ app.py               # Main Streamlit app
 ├─ requirements.txt     # Libraries
 ├─ .env.example         # Example environment file
-├─ service_account.json # (Optional) Drive API credentials
 ├─ README.md            # This readme
 └─ ...
 ```
@@ -100,7 +103,7 @@ ResumeAnalyzer/
 
 ## Demo / Hosted Link
 If you have a public or private hosting link, add it here:
-- **Hosted on Streamlit Cloud**: [https://YOUR-STREAMLIT-APP](https://YOUR-STREAMLIT-APP)
+- **Hosted on Streamlit Cloud**: [https://YOUR-STREAMLIT-APP](https://gen-ai-resume-analyz.streamlit.app/)
 
 ---
 
@@ -108,10 +111,16 @@ If you have a public or private hosting link, add it here:
 Include any relevant screenshots here.
 
 1. **Sidebar** & **Upload**:
-   ![Sidebar with multiple methods](docs/screenshots/sidebar.png)
+   ![Sidebar with multiple methods](Screenshots/MainPage.png)
 
-2. **Results**:
-   ![Excel results preview](docs/screenshots/results.png)
+2. **Processing**:
+   ![Processing fetched pdf from google drive](Screenshots/uploading.png)
+
+3. **Results**:
+   ![Showing results on UI](Screenshots/result.png)
+
+4. **Results in excel**:
+   ![Excel results preview](Screenshots/excel.png)
 
 ---
 
