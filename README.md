@@ -108,7 +108,6 @@ If you have a public or private hosting link, add it here:
 ---
 
 ## Screenshots
-Include any relevant screenshots here.
 
 1. **Sidebar** & **Upload**:
    ![Sidebar with multiple methods](Screenshots/MainPage.png)
